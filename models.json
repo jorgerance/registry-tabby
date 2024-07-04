@@ -76,13 +76,22 @@
 		"sha256": "ab634d1d552dc60533e486cbcc73ad9b01358994dabf2453230e7fcd77308dc8"
 	},
 	{
-		"name": "Mistral-7B-v0.3-GGUF-smashed",
+		"name": "Mistral-7B-v0.3-Smashed",
         "provider_url": "https://huggingface.co/PrunaAI/Mistral-7B-v0.3-GGUF-smashed",
 		"chat_template": "<s>{% for message in messages %}{% if (message['role'] == 'user') != (loop.index0 % 2 == 0) %}{{ raise_exception('Conversation roles must alternate user/assistant/user/assistant/...') }}{% endif %}{% if message['role'] == 'user' %}{{ '[INST] ' + message['content'] + ' [/INST]' }}{% elif message['role'] == 'assistant' %}{{ message['content'] + '</s> ' }}{% else %}{{ raise_exception('Only user and assistant roles are supported!') }}{% endif %}{% endfor %}",
 		"urls": [
 			"https://huggingface.co/PrunaAI/Mistral-7B-v0.3-GGUF-smashed/resolve/main/Mistral-7B-v0.3.Q4_K_M.gguf"
 		],
 		"sha256": "262806ca7bd691f075efbc2c0552c4e86f36b9c3adbd95ab6b41280b2c327ce3"
+	},
+	{
+		"name": "Mistral-7B-v0.3-Instruct-Smashed",
+        "provider_url": "https://huggingface.co/PrunaAI/Mistral-7B-Instruct-v0.3-GGUF-smashed/resolve/main/Mistral-7B-Instruct-v0.3.Q4_K_M.gguf",
+		"chat_template": "<s>{% for message in messages %} {% if (message['role'] == 'user') != (loop.index0 % 2 == 0) %}{{ raise_exception('Conversation roles must alternate user/assistant/user/assistant/...') }}{% endif %} {% if message['role'] == 'user' %} [INST] {{ message['content'] }}[/INST] {% elif message['role'] == 'assistant' %} {{ message['content'] }}</s> {% else %} {{ raise_exception('Only user and assistant roles are supported!') }} {% endif %} {% endfor %}",
+		"urls": [
+			"https://huggingface.co/PrunaAI/Mistral-7B-v0.3-GGUF-smashed/resolve/main/Mistral-7B-v0.3.Q4_K_M.gguf"
+		],
+		"sha256": "c1a9e3a6d5b3dbc23c414e60506f4fdf891e601d63f08e202f639e9baa7a309e"
 	},
 	{
 		"name": "DeepseekCoder-1.3B",
