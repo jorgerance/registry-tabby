@@ -110,6 +110,14 @@
 		"sha256": "9f9197a8ea01914e7f18f95b0d5d4782bebca4ba8b3e6cf3e5b2f369fa9b88ad"
 	},
 	{
+		"name": "DeepseekCoder-6.7B_Q4_K_M",
+		"prompt_template": "<｜fim▁begin｜>{prefix}<｜fim▁hole｜>{suffix}<｜fim▁end｜>",
+		"urls": [
+			"https://huggingface.co/TheBloke/deepseek-coder-6.7B-base-GGUF/resolve/main/deepseek-coder-6.7b-base.Q4_K_M.gguf"
+		],
+		"sha256": "28cef03e1b2d2478dafdb09f1520417cab55efcd3d1cc22bb1950c90bcd8804b"
+	},
+	{
 		"name": "CodeGemma-2B",
 		"prompt_template": "<|fim_prefix|>{prefix}<|fim_suffix|>{suffix}<|fim_middle|>",
 		"urls": [
