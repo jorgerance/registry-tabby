@@ -27,6 +27,14 @@
 		"sha256": "33dfcc7e216f1a072b4e16cd3bb19a0e55f5874ed319416435c8fc99216b8bfa"
 	},
 	{
+		"name": "StarCoder2-3B-Q5_K_M",
+		"prompt_template": "<fim_prefix>{prefix}<fim_suffix>{suffix}<fim_middle>",
+		"urls": [
+			"https://huggingface.co/second-state/StarCoder2-3B-GGUF/resolve/main/starcoder2-3b-Q5_K_M.gguf"
+		],
+		"sha256": "dcd804dc5888e4eb266ba9f6a03ddd7387dd41afbaae8dd14658660d26b6d6d4"
+	},
+	{
 		"name": "StarCoder2-3B",
 		"prompt_template": "<fim_prefix>{prefix}<fim_suffix>{suffix}<fim_middle>",
 		"urls": [
