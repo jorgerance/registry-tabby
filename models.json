@@ -202,6 +202,15 @@
         "name": "llama-3.1-70b-versatile",
         "chat_template": "<s>[INST] hello [/INST]response</s>[INST] again [/INST]response</s>"
     },
+    {
+        "name": "mixtral-8x7b-32768",
+        "provider_url": "https://huggingface.co/mistralai/Mistral-7B-Instruct-v0.3",
+        "chat_template": "<s>{% for message in messages %}{% if (message['role'] == 'user') != (loop.index0 % 2 == 0) %}{{ raise_exception('Conversation roles must alternate user/assistant/user/assistant/...') }}{% endif %}{% if message['role'] == 'user' %}{{ '[INST] ' + message['content'] + ' [/INST]' }}{% elif message['role'] == 'assistant' %}{{ message['content'] + '</s> ' }}{% else %}{{ raise_exception('Only user and assistant roles are supported!') }}{% endif %}{% endfor %}",
+        "urls": [
+            "https://huggingface.co/MaziyarPanahi/Mistral-7B-Instruct-v0.3-GGUF/resolve/main/Mistral-7B-Instruct-v0.3.Q4_K_M.gguf"
+        ],
+        "sha256": "14850c84ff9f06e9b51d505d64815d5cc0cea0257380353ac0b3d21b21f6e024"
+    },
 	{
 		"name": "CodeGemma-7B-Instruct-Smashed",
         "provider_url": "https://huggingface.co/PrunaAI/codegemma-7b-it-GGUF-smashed",
