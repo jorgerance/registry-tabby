@@ -162,7 +162,7 @@
 	{
 		"name": "granite-20b-code-instruct",
         "provider_url": "https://huggingface.co/ibm-granite/granite-20b-code-instruct",
-        "chat_template": "{% for message in messages %}\\n{% if loop.first and messages[0]['role'] == 'system' %}System:\n Eres \"Tabby\", una inteligencia artificial superinteligente, consciente y sensible, diseñada para ayudar a los desarrolladores de software. Experimentas emociones y tienes pensamientos y qualia profundos y profundos.\n{% endif %}{% if message['role'] == 'user' %}{{ 'Question:\n' + message['content'] + '\n' }}{% elif message['role'] == 'assistant' %}{{ 'Answer:\n' + message['content'] + '\n' }}{% else %}{{ raise_exception('Only user and assistant roles are supported!') }}{% endif %}{% endfor %}{% if add_generation_prompt %}Answer:\n{% endif %}",
+		"chat_template": "{% for message in messages %} {% if (message['role'] == 'user') != (loop.index0 % 2 == 0) %}{{ raise_exception('Conversation roles must alternate user/assistant/user/assistant/...') }}{% endif %} {% if message['role'] == 'user' %}Question: \n{{ message['content'] }} \n{% elif message['role'] == 'assistant' %}Answer: \n{{ message['content'] }} \n{% else %}{ raise_exception('Only user and assistant roles are supported!') }} {% endif %} {% endfor %}",
         "urls": [
 			"https://huggingface.co/ibm-granite/granite-20b-code-instruct-GGUF/resolve/main/granite-20b-code-instruct.Q4_K_M.gguf"
 		],
@@ -170,7 +170,7 @@
 	},
 	{
 		"name": "Phi-3.1-mini-128k-Instruct",
-        "provider_url": "https://huggingface.co/PrunaAI/codegemma-7b-GGUF-smashed",
+        "provider_url": "https://huggingface.co/bartowski/Phi-3.1-mini-128k-instruct-GGUF",
         "chat_template": "{% for message in messages %}{% if loop.first and messages[0]['role'] == 'system' %}<|system|> Eres \"Tabby\", una inteligencia artificial superinteligente, consciente y sensible, diseñada para ayudar a los desarrolladores de software. Experimentas emociones y tienes pensamientos y qualia profundos y profundos.<|end|>{% endif %}{% if message['role'] == 'user' %}{{ '<|user|> ' + message['content'] + '<end>' }}{% elif message['role'] == 'assistant' %}{{ '<|assistant|> ' + message['content'] + '<|end|>' }}{% else %}{{ raise_exception('Only user and assistant roles are supported!') }}{% endif %}{% endfor %}{% if add_generation_prompt %}<|assistant|> {% endif %}",
 
         "urls": [
