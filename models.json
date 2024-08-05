@@ -194,6 +194,14 @@
 		],
 		"sha256": "3f0fd0cc522f22590630e6c912e24178b088839ec015ab9fa04cbb018ea72eb6"
 	},
+    {
+        "name": "llama3-70b-8192",
+        "chat_template": "<s>[INST] hello [/INST]response</s>[INST] again [/INST]response</s>"
+    },
+    {
+        "name": "llama-3.1-70b-versatile",
+        "chat_template": "<s>[INST] hello [/INST]response</s>[INST] again [/INST]response</s>"
+    },
 	{
 		"name": "CodeGemma-7B-Instruct-Smashed",
         "provider_url": "https://huggingface.co/PrunaAI/codegemma-7b-it-GGUF-smashed",
